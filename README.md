@@ -1,6 +1,7 @@
-#Project Title
+# Daylio Visuals
 For Daylio users who want to explore and interact with their data without spreadsheets.
-##Tech
+
+## Prerequisites
 This project makes use of the following:
 
 * Git
@@ -14,9 +15,9 @@ This project makes use of the following:
 * Kibana
     * Installed and configured by Docker-compose. It is also ephemeral, meaning that once the docker-compose command is stopped, Kibana will no longer be accessible on your machine and changes you've made will be lost.
 
-##Getting Started
+## Getting Started
 
-###Export Daylio Data
+### Export Daylio Data
 In your Daylio mobile app, follow these steps:
 1. Tap 'More'
 2. Tap 'Export Entries'
@@ -24,8 +25,8 @@ In your Daylio mobile app, follow these steps:
 4. Send the .csv to yourself so that it is accessible from your computer
 5. Download the .csv to your computer
 
-###OS-specific Instructions
-####Linux
+### OS-specific Instructions
+#### Linux
 1. Clone this repository 
     
     ```$ git clone https://github.com/gshel/daylio_visuals.git```
@@ -50,13 +51,13 @@ In your Daylio mobile app, follow these steps:
     ```$ python3 csv_to_es.py```
 7. [Go to the `Kibana Configuration` section to continue](README.md#kibana-configuration)
 
-####Mac
+#### Mac
 TODO
 
-####Windows 10
+#### Windows 10
 TODO
 
-###Kibana Configuration
+### Kibana Configuration
 1. Open your browser and navigate to Kibana at `localhost:5601`
 2. On the left-side of Kibana find and click on `Management`
 3. Under Kibana, click `Index Patterns`
