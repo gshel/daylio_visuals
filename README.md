@@ -43,7 +43,7 @@ In your Daylio mobile app, follow these steps:
     
     ```$ docker-compose up```
     
-    :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to repeat this process from this step onwards. 
+    :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to restart the process from this step and continue until the end. 
     
 5. Open a new terminal
 6. Run the following command 
