@@ -11,7 +11,7 @@ This project makes use of the following:
 * Python 3.6
     * https://realpython.com/installing-python/
 * Elasticsearch
-    * Installed and configured by Docker-compose. It is also ephemeral, meaning that once the docker-compose command is stopped, Elasticsearch will no longer be accessible on your machine and changes you've made will be lost..
+    * Installed and configured by Docker-compose. It is also ephemeral, meaning that once the docker-compose command is stopped, Elasticsearch will no longer be accessible on your machine and changes you've made will be lost.
 * Kibana
     * Installed and configured by Docker-compose. It is also ephemeral, meaning that once the docker-compose command is stopped, Kibana will no longer be accessible on your machine and changes you've made will be lost.
 
