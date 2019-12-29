@@ -6,7 +6,7 @@ This project makes use of the following:
 
 * Git
     * https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-* Docker-compose
+* Docker-compose (comes bundled with Docker for Mac & Windows Users)
     * https://docs.docker.com/compose/install/
 * Python 3.6
     * https://realpython.com/installing-python/
