@@ -1,7 +1,7 @@
-#Daylio Visuals
+# Daylio Visuals
 For Daylio users who want to explore and interact with their data without spreadsheets.
 
-##Getting Started
+## Getting Started
 _Table of Contents_
 * [Daylio](README.md#daylio)
 * [Setup](README.md#setup)
@@ -12,7 +12,7 @@ _Table of Contents_
     * [Configure](README.md#configure)
     * [Visualize](README.md#visualize)
 * [Contribute](README.md#contribute)
-###Daylio
+### Daylio
 In your Daylio mobile app, follow these steps:
 1. Tap 'More'
 2. Tap 'Export Entries'
@@ -20,8 +20,8 @@ In your Daylio mobile app, follow these steps:
 4. Send the .csv to yourself so that it is accessible from your computer
 5. Download the .csv to your computer
 
-###Setup
-####Linux
+### Setup
+#### Linux
 1. Install the following to continue
     * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/#_installing_on_linux)
     * [Python3](https://realpython.com/installing-python/#linux)
@@ -59,7 +59,7 @@ In your Daylio mobile app, follow these steps:
     
 9. [Configure Kibana](README.md#kibana)
 
-####Mac
+#### Mac
 1. Install the following to continue
     * [Git](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop)
     * [Python3](https://realpython.com/installing-python/#macos-mac-os-x)
@@ -96,7 +96,7 @@ In your Daylio mobile app, follow these steps:
     
 10. [Configure Kibana](README.md#kibana)
 
-####Windows 10
+#### Windows 10
 1. Install the following to continue
     * [Github Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop)
     * [Python3](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p)
@@ -135,8 +135,8 @@ In your Daylio mobile app, follow these steps:
    ```
     
 10. [Configure Kibana](README.md#kibana)
-###Kibana
-####Configure
+### Kibana
+#### Configure
 1. Open your browser and navigate to Kibana at http://localhost:5601
 2. On the left-side of Kibana find and click on `Management`
 3. Under Kibana, click `Index Patterns`
@@ -146,16 +146,16 @@ In your Daylio mobile app, follow these steps:
 7. Click `Create index pattern`
 
 Congrats, setup complete! 
-####Visualize
+#### Visualize
 On the left-side of Kibana, find and click on `Visualizations` to start exploring.
 
-###Contribute
+### Contribute
 Have any suggestions on how to improve this project? 
 
 Even if it's just a suggestion on rephrasing, your input is appreciated! Feel free to reach out by starting an issue in the GitHub repository. If you're new to programming, I'd be happy to show you how to submit a Pull Request! 
-####Special Thanks to...
+#### Special Thanks to...
 Thank you to those of you who acted as a guinea pig so that others could have an easier time setting this up!
 * stebo02
 
-####Join the community
+#### Join the community
 Join the community at [r/Daylio](https://www.reddit.com/r/daylio) on Reddit!
