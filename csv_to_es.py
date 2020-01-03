@@ -1,6 +1,8 @@
 import csv
 from datetime import datetime
+
 from elasticsearch import Elasticsearch
+from elasticsearch.exceptions import RequestError
 
 print("Starting...")
 # where to GET your data
@@ -22,7 +24,7 @@ print("Creating a new 'daylio' index...")
 es.indices.create(index="daylio")
 
 # iterate over the data in csvfilepath (your Daylio export)
-reader = csv.DictReader(open(csvfilepath, 'r'))
+reader = csv.DictReader(open(csvfilepath, 'r', encoding='utf-8'))
 print(f"Successfully reading {csvfilepath}, beginning to index each row now...")
 for row in reader:
     # combine full date and time
@@ -45,5 +47,9 @@ for row in reader:
     row.pop('activities')
 
     # insert each row from the CSV into Elasticsearch as a document, so that we can visualize it using Kibana
-    es.index(index='daylio', doc_type='json', body=row)
+    try:
+        es.index(index='daylio', doc_type='json', body=row)
+    except RequestError:
+        print(f"ERROR! Unable to index malformed row:\n{row}")
+        pass
 print("Finished indexing all rows into Elasticsearch.\nGo to 'http://localhost:5601' in your browser.")
