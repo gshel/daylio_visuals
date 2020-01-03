@@ -1,3 +1,5 @@
+![](https://github.com/gshel/daylio_visuals/workflows/static/badge.svg)
+
 # Daylio Visuals
 For Daylio users who want to explore and interact with their data without spreadsheets.
 
