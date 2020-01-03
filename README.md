@@ -1,23 +1,18 @@
-# Daylio Visuals
+#Daylio Visuals
 For Daylio users who want to explore and interact with their data without spreadsheets.
 
-## Prerequisites
-This project makes use of the following:
-
-* Git
-    * https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
-* Docker-compose (comes bundled with Docker for Mac & Windows Users)
-    * https://docs.docker.com/compose/install/
-* Python 3.6
-    * https://realpython.com/installing-python/
-* Elasticsearch
-    * Installed and configured by Docker-compose. It is also ephemeral, meaning that once the docker-compose command is stopped, Elasticsearch will no longer be accessible on your machine and changes you've made will be lost.
-* Kibana
-    * Installed and configured by Docker-compose. It is also ephemeral, meaning that once the docker-compose command is stopped, Kibana will no longer be accessible on your machine and changes you've made will be lost.
-
-## Getting Started
-
-### Export Daylio Data
+##Getting Started
+_Table of Contents_
+* [Daylio](README.md#daylio)
+* [Setup](README.md#setup)
+    * [Linux](README.md#linux)
+    * [Mac](README.md#mac)
+    * [Windows 10](README.md#windows-10)
+* [Kibana](README.md#kibana)
+    * [Configure](README.md#configure)
+    * [Visualize](README.md#visualize)
+* [Contribute](README.md#contribute)
+###Daylio
 In your Daylio mobile app, follow these steps:
 1. Tap 'More'
 2. Tap 'Export Entries'
@@ -25,40 +20,124 @@ In your Daylio mobile app, follow these steps:
 4. Send the .csv to yourself so that it is accessible from your computer
 5. Download the .csv to your computer
 
-### OS-specific Instructions
-#### Linux
-1. Clone this repository 
+###Setup
+####Linux
+1. Install the following to continue
+    * [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/#_installing_on_linux)
+    * [Python3](https://realpython.com/installing-python/#linux)
+    * [Docker](https://docs.docker.com/install/)
+    * [Docker-compose](https://docs.docker.com/compose/install/)
+    
+2. Clone this repository from Github
     
     ```$ git clone https://github.com/gshel/daylio_visuals.git```
     
-2. Change to local project repo's root directory 
+3. Change to local project repository's root directory 
     
-    ```$ cd daylio_visuals```
+    ```$ cd <PATH_CLONED_REPO>/daylio_visuals```
     
-3. Move exported data into your local project repo 
+4. Move exported data into your local project repo 
     
-    ```$ mv <RELATIVE_PATH_TO_CSV>/daylio_export.csv .```
+    ```$ mv <PATH_TO_CSV>/daylio_export.csv .```
     
-4. Run the following command to start Elasticsearch and Kibana locally 
+5. Run the following command, starting Elasticsearch + Kibana locally 
     
     ```$ docker-compose up```
     
-    :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to restart the process from this step and continue until the end. 
+    :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to repeat the process from this step onwards. 
+
+6. Verify that Elasticsearch + Kibana have successfully started -> http://localhost:5601
+
+7. Open a new terminal
+
+8. Run the following commands 
     
-5. Open a new terminal
-6. Run the following command 
+    ```
+    $ pip3 install -r requirements.txt 
+    $ python3 csv_to_es.py
+   ```
     
-    ```$ python3 csv_to_es.py```
-7. [Go to the `Kibana Configuration` section to continue](README.md#kibana-configuration)
+9. [Configure Kibana](README.md#kibana)
 
-#### Mac
-TODO
+####Mac
+1. Install the following to continue
+    * [Git](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop)
+    * [Python3](https://realpython.com/installing-python/#macos-mac-os-x)
+    * [Docker Desktop](https://docs.docker.com/docker-for-mac/install/)
 
-#### Windows 10
-TODO
+2. Verify Docker Desktop installation
 
-### Kibana Configuration
-1. Open your browser and navigate to Kibana at `localhost:5601`
+    ```$ docker --version```
+
+3. [Clone this repository](https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-to-github-desktop)
+
+4. Open up a terminal window
+
+5. Change to local project repository's root directory
+    
+    ```$ cd ~/Documents/Github/daylio_visuals```
+    
+6. Run the following command, starting Elasticsearch + Kibana locally 
+    
+    ```> docker-compose up```
+    
+    :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to repeat the process from this step onwards. 
+
+7. Verify that Elasticsearch + Kibana have successfully started -> http://localhost:5601
+
+8. Open a new terminal
+
+9. Run the following commands 
+    
+    ```
+    $ pip3 install -r requirements.txt 
+    $ python3 csv_to_es.py
+   ```
+    
+10. [Configure Kibana](README.md#kibana)
+
+####Windows 10
+1. Install the following to continue
+    * [Github Desktop](https://help.github.com/en/desktop/getting-started-with-github-desktop/installing-github-desktop)
+    * [Python3](https://www.microsoft.com/en-us/p/python-37/9nj46sx7x90p)
+    * [Docker Desktop](https://docs.docker.com/docker-for-windows/install/)
+    
+    :warning: For Docker to run properly on Windows, [Hyper-V](https://docs.microsoft.com/en-us/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) and [Virtualization](https://docs.docker.com/docker-for-windows/troubleshoot/#virtualization-must-be-enabled) **must** be enabled.
+2. Verify that Docker is properly installed
+
+    ```> docker version```
+    
+    :warning:  don't copy/paste the "> ", otherwise the command won't work! This is just to show that you're entering the command into Microsoft Powershell.
+
+3. [Clone this repository](https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-to-github-desktop)
+    
+4. Open up Microsoft Powershell as an administrator
+ 
+5. Change to local project repository's root directory
+    
+    ```> cd C:\Users\%UserProfile%\Documents\Github\daylio_visuals```
+    
+6. Run the following command, starting Elasticsearch + Kibana locally 
+    
+    ```> docker-compose up```
+    
+    :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to repeat the process from this step onwards. 
+ 
+7. Verify that Elasticsearch + Kibana have successfully started -> http://localhost:5601
+
+8. Open a new window of Powershell as an administrator
+
+9. Run the following commands 
+    
+    ```
+    > pip install -r requirements.txt 
+    > python csv_to_es.py
+   ```
+    
+10. [Configure Kibana](README.md#kibana)
+###Kibana
+####Configure
+1. Open your browser and navigate to Kibana at http://localhost:5601
 2. On the left-side of Kibana find and click on `Management`
 3. Under Kibana, click `Index Patterns`
 4. Click `Create index pattern`
@@ -66,4 +145,17 @@ TODO
 6. For Step 2, select `datetime` from the `Time Filter field name` drop-down
 7. Click `Create index pattern`
 
-Congrats, setup complete! On the left-side of Kibana, find and click on `Visualizations` to start exploring.
+Congrats, setup complete! 
+####Visualize
+On the left-side of Kibana, find and click on `Visualizations` to start exploring.
+
+###Contribute
+Have any suggestions on how to improve this project? 
+
+Even if it's just a suggestion on rephrasing, your input is appreciated! Feel free to reach out by starting an issue in the GitHub repository. If you're new to programming, I'd be happy to show you how to submit a Pull Request! 
+####Special Thanks to...
+Thank you to those of you who acted as a guinea pig so that others could have an easier time setting this up!
+* stebo02
+
+####Join the community
+Join the community at [r/Daylio](https://www.reddit.com/r/daylio) on Reddit!
