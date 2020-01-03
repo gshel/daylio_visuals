@@ -1,4 +1,4 @@
-name: Daylio Visuals
+name: static
 
 on: [push]
 
