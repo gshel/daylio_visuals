@@ -79,24 +79,28 @@ In your Daylio mobile app, follow these steps:
     
     ```$ cd ~/Documents/Github/daylio_visuals```
     
-6. Run the following command, starting Elasticsearch + Kibana locally 
+6. Move exported data into your local project repo 
+    
+    ```$ mv <PATH_TO_CSV>/daylio_export.csv .```
+    
+7. Run the following command, starting Elasticsearch + Kibana locally 
     
     ```> docker-compose up```
     
     :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to repeat the process from this step onwards. 
 
-7. Verify that Elasticsearch + Kibana have successfully started -> http://localhost:5601
+8. Verify that Elasticsearch + Kibana have successfully started -> http://localhost:5601
 
-8. Open a new terminal
+9. Open a new terminal
 
-9. Run the following commands 
+10. Run the following commands 
     
     ```
     $ pip3 install -r requirements.txt 
     $ python3 csv_to_es.py
-   ```
+    ```
     
-10. [Configure Kibana](README.md#kibana)
+11. [Configure Kibana](README.md#kibana)
 
 #### Windows 10
 1. Install the following to continue
@@ -113,30 +117,32 @@ In your Daylio mobile app, follow these steps:
 
 3. [Clone this repository](https://help.github.com/en/desktop/contributing-to-projects/cloning-a-repository-from-github-to-github-desktop)
     
-4. Open up Microsoft Powershell as an administrator
+4. Open up Microsoft Powershell as an administrator 
  
 5. Change to local project repository's root directory
     
     ```> cd C:\Users\%UserProfile%\Documents\Github\daylio_visuals```
-    
-6. Run the following command, starting Elasticsearch + Kibana locally 
+
+6. Move your Daylio export into the repository's root directory
+
+7. Run the following command, starting Elasticsearch + Kibana locally 
     
     ```> docker-compose up```
     
     :warning: As long as this terminal is up, you will be able to access Elasticsearch and Kibana. If the terminal is closed, you'll need to repeat the process from this step onwards. 
  
-7. Verify that Elasticsearch + Kibana have successfully started -> http://localhost:5601
+8. Verify that Elasticsearch + Kibana have successfully started -> http://localhost:5601
 
-8. Open a new window of Powershell as an administrator
+9. Open a new window of Powershell as an administrator
 
-9. Run the following commands 
+10. Run the following commands 
     
     ```
     > pip install -r requirements.txt 
     > python csv_to_es.py
-   ```
+    ```
     
-10. [Configure Kibana](README.md#kibana)
+12. [Configure Kibana](README.md#kibana)
 ### Kibana
 #### Configure
 1. Open your browser and navigate to Kibana at http://localhost:5601
